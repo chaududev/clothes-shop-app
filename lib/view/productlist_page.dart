@@ -61,14 +61,40 @@ class _ProductListPageState extends State<ProductListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+        centerTitle: true,
+        title: const Text(
+          'Shop Chau Du',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+        ),
+        leading:  IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              // Do something.
+            }
+        ),
+          actions: <Widget> [
+            IconButton(
+            icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => const CartPage()
+                    )
+                );
+              },
+          ),
+          ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildTitle(context),
               SizedBox(height: 20,),
               buildSearch(context),
               SizedBox(height: 20,),
@@ -84,33 +110,6 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  buildTitle(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
-        Text.rich(
-            TextSpan(
-                text: "Shop ",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                children: [
-                  TextSpan(
-                      text: "Chau Du",
-                      style: TextStyle(fontWeight: FontWeight.normal)
-                  )
-                ]
-            )
-        ),
-        IconButton(onPressed: (){
-          Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const CartPage()
-              )
-          );
-        }, icon: Icon(Icons.shopping_cart)),
-      ],
-    );
-  }
   buildSearch(BuildContext context) {
     return Form(
       key:_formKey,
