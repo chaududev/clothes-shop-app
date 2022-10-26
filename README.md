@@ -1,6 +1,9 @@
-# untitled
+# Interface
+Update v2.0 : Đã khắc phục lỗi giật màn hình và lỗi tràn màn phần cart nếu để form to
 
-A new Flutter project.
+![1](https://user-images.githubusercontent.com/81465934/197908098-cab5faa5-59bf-4ef4-af62-bcaa9a00d4fd.JPG)
+![2](https://user-images.githubusercontent.com/81465934/197908111-6aa969d8-8c6a-4690-b5fe-4c4a4434f79b.JPG)
+![3](https://user-images.githubusercontent.com/81465934/197908123-b9f0afe7-848c-4d12-8c20-daba4b8eb222.JPG)
 
 ## Getting Started
 
